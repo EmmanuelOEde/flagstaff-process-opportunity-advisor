@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Process Opportunity Advisor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <p class="eyebrow">PROCESS DISCOVERY</p>
+      <h1>Process Opportunity Advisor</h1>
+      <p class="sub">A guided conversation to identify process-improvement, automation, and AI opportunities.</p>
+    </div>
+    <span id="status" class="status">Model not loaded</span>
+  </header>
+
+  <section id="welcome" class="card">
+    <h2>Review a business process</h2>
+    <p>You know your work. You don't need to know automation or AI. The advisor will ask focused questions and prepare an initial assessment for IT.</p>
+    <p class="note">Please don't enter passwords, Social Security numbers, medical details, or other sensitive information.</p>
+    <button id="start">Start process review</button>
+    <div id="loading" hidden>
+      <p id="loadingText">Loading the local AI model…</p>
+      <progress id="progress" max="100" value="0"></progress>
+      <p class="small">First launch downloads the model to your browser. After that, your browser can reuse its cached copy.</p>
+    </div>
+  </section>
+
+  <section id="session" class="card" hidden>
+    <div id="chat"></div>
+    <form id="form">
+      <textarea id="answer" rows="3" placeholder="Type your answer…" required></textarea>
+      <div class="actions">
+        <button type="submit">Send</button>
+        <button type="button" id="finish" class="secondary">Prepare assessment</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="reportCard" class="card" hidden>
+    <div class="report-head">
+      <h2>IT Assessment</h2>
+      <button id="download" class="secondary">Download</button>
+    </div>
+    <pre id="report"></pre>
+  </section>
+
+  <footer>Runs locally in your browser. No account or API key required.</footer>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>
