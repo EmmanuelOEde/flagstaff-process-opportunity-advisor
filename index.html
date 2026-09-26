@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Process Opportunity Advisor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header><h1>Process Opportunity Advisor</h1>
+  <p>Guided process discovery for identifying automation, AI-assisted, and process-improvement opportunities.</p></header>
+
+  <section id="welcome" class="card">
+    <h2>Review a process</h2>
+    <p>I'll ask a short series of questions about a process you know. You don't need technical terminology or process diagrams.</p>
+    <p class="notice"><strong>Please don't enter</strong> passwords, credentials, SSNs, medical information, or other sensitive data.</p>
+    <button id="start">Start process review</button>
+  </section>
+
+  <section id="session" class="card hidden">
+    <div id="progress"></div>
+    <div id="chat" aria-live="polite"></div>
+    <form id="answerForm">
+      <label for="answer">Your answer</label>
+      <textarea id="answer" rows="4" required></textarea>
+      <div class="actions"><button type="submit">Continue</button></div>
+    </form>
+  </section>
+
+  <section id="reportCard" class="card hidden">
+    <h2>Process Opportunity Assessment</h2>
+    <div id="report"></div>
+    <div class="actions">
+      <button id="download">Download assessment</button>
+      <button id="restart" class="secondary">Review another process</button>
+    </div>
+  </section>
+</main>
+<footer>Focused discovery tool • No account, API key, model download, or installation required.</footer>
+<script src="app.js"></script>
+</body></html>
