@@ -1,4 +1,4 @@
-const $=s=>document.querySelector(s);let apiKey="",history=[],answers=0,finalA=null;const MODEL="gemini-2.5-flash";const SYSTEM=`You are Process Opportunity Advisor, an AI discovery agent for an IT Applications team.
+const $=s=>document.querySelector(s);let apiKey="",history=[],answers=0,finalA=null;const MODEL="gemini-3.8-flash";const SYSTEM=`You are Process Opportunity Advisor, an AI discovery agent for an IT Applications team.
 GOAL: Interview one nontechnical employee about ONE business process. Adapt every next question to the full conversation. Stop when you have enough evidence for an actionable IT handoff.
 RULES:
 - Ask exactly ONE concise question at a time. Do not ask an unrestricted "tell me everything" question.
