@@ -245,12 +245,15 @@ function show(){
 
   $("#session").classList.add("hidden");
   $("#reportCard").classList.remove("hidden");
-  $("#direction").textContent=a.recommended_direction;
+
+  $("#direction").innerHTML=
+    `<span style="display:block;font-size:.72em;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;">Assessment recommendation</span>${esc(a.recommended_direction)}`;
 
   $("#summary").innerHTML=
-    `<b>${esc(a.recommended_direction)}</b><p>${esc(a.rationale)}</p>`;
+    `<b style="display:block;margin-bottom:8px;">Why this is recommended</b><p>${esc(a.rationale)}</p>`;
 
   $("#report").innerHTML=
+    `<div class="section"><h3 style="text-transform:uppercase;letter-spacing:.06em;">Assessment details</h3></div>`+
     sec("Process and outcome",`<p><b>${esc(a.process_name)}</b></p><p>${esc(a.business_outcome)}</p>`)+
     sec("Trigger and completion",`<p>${esc(a.trigger_and_completion)}</p>`)+
     sec("Normal path",list(a.normal_path))+
@@ -275,11 +278,13 @@ function report(a){
   return `PROCESS OPPORTUNITY ASSESSMENT
 Generated from an actual adaptive AI discovery session.
 
-RECOMMENDED DIRECTION
+ASSESSMENT RECOMMENDATION
 ${a.recommended_direction}
 
-RATIONALE
+WHY THIS IS RECOMMENDED
 ${a.rationale}
+
+ASSESSMENT DETAILS
 
 PROCESS / OUTCOME
 ${a.process_name}
